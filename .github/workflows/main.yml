@@ -32,13 +32,12 @@ jobs:
           key: ${{ github.sha }}
       # - name: Build
       #   run: npm run build
-      - name: Apt
-        run: sudo apt-get install sshpass -y
-      - name: Run sshpass commands
-        uses: matheusvanzan/sshpass-action@v2
+      - name: ls -a via ssh
+        uses: fifsky/ssh-action@master
         with:
+          command: |
+            cd /tmp
+            ls -a
           host: ${{ secrets.SERVER_HOST }}
-          port: 22
-          user: ${{ secrets.SERVER_USER }}
           pass: ${{ secrets.SERVER_PASS }}
-          run: sshpass -p 'klxhunter' ssh klxhunter@valorwar.ml
+          user: ${{ secrets.SERVER_USER }}
