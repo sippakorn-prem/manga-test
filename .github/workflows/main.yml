@@ -38,6 +38,7 @@ jobs:
           user: ${{ secrets.SERVER_USER }}
           command: |
             cd /home/klxhunter/klxhunter/devops/projects/test_cicd
+            ls
             git status
             git checkout main
             git pull
