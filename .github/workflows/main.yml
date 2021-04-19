@@ -16,7 +16,7 @@ jobs:
       - name: Build
         uses: fifsky/ssh-action@master
         with:
-          host: ${{ secrets.SERVER_HOST_DEV }}
+          host: ${{ secrets.SERVER_HOST }}
           pass: ${{ secrets.SERVER_PASS }}
           user: ${{ secrets.SERVER_USER }}
           command: |
