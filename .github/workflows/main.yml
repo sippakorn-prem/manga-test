@@ -30,8 +30,8 @@ jobs:
         with:
           path: '.'
           key: ${{ github.sha }}
-      - name: Buil
-        run: npm run build
+      # - name: Build
+      #   run: npm run build
       - name: Run sshpass commands
         uses: matheusvanzan/sshpass-action@v2
         with:
