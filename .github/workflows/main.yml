@@ -30,14 +30,14 @@ jobs:
         with:
           path: '.'
           key: ${{ github.sha }}
-      # - name: Build
-      #   run: npm run build
       - name: ls -a via ssh
         uses: fifsky/ssh-action@master
         with:
-          command: |
-            cd /tmp
-            ls -a
           host: ${{ secrets.SERVER_HOST }}
           pass: ${{ secrets.SERVER_PASS }}
           user: ${{ secrets.SERVER_USER }}
+          command: |
+            cd /home/klxhunter/klxhunter/devops/projects/test_cicd
+            git status
+            git checkout main
+            git pull
